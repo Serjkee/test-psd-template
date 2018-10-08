@@ -1,0 +1,93 @@
+@import "vars";
+@import "fonts";
+@import "libs";
+@import "_mixins/_mixins";
+
+::placeholder {
+	color: #666;
+}
+
+::selection {
+	background-color: $primary;
+	color: #fff;
+}
+
+body {
+	font-size: 16px;
+	min-width: 320px;
+	position: relative;
+	line-height: 1.65;
+	font-family: $default-font;
+	overflow-x: hidden;
+	color: $secondary;
+	input, textarea {
+		border: #666 1px solid;
+		outline: none;
+		&:focus:required:invalid {
+			border-color: red;
+		}
+		&:required:valid {
+			border-color: green;
+		}
+	}
+}
+
+.img-responsive {
+	display: block;
+	max-width: 100%;
+	height: auto;
+	&.img-width {
+		width: 100%;
+	}
+}
+
+.main {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+
+
+.header {
+	position: absolute;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	align-self: center;
+	max-width: 1750px;
+	width: 100%;
+	top: 5%;
+
+	.header-nav {
+		ul {
+			margin: 0;
+			padding: 0;
+
+			li {
+				display: inline-block;
+				padding-right: 8%;
+				list-style: none;
+
+				&:last-child {
+					padding-right: 0;
+				}
+
+				a {
+					text-transform: uppercase;
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+
+
+.top-row {
+  background-image: url('../img/header-image.jpg');
+}
+
+@import "media"; // Always at the end
